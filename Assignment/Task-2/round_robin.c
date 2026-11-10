@@ -1,0 +1,3 @@
+#include <stdio.h>
+#define N 4
+int main(void){const char*n[N]={"P1","P2","P3","P4"};int a[N]={0,1,2,3},b[N]={8,4,9,5},q=3,l[N],f[N],Q[128],h=0,t=0,ad[N]={0};for(int i=0;i<N;i++)l[i]=b[i];int tm=0,d=0;Q[t++]=0;ad[0]=1;printf("Gantt:");while(d<N){int p=Q[h++],run=l[p]<q?l[p]:q,s=tm;tm+=run;l[p]-=run;printf(" %s(%d-%d)",n[p],s,tm);for(int i=0;i<N;i++)if(!ad[i]&&a[i]<=tm){Q[t++]=i;ad[i]=1;}if(l[p])Q[t++]=p;else{f[p]=tm;d++;}}double w=0,z=0;puts("\nProcess TAT WT");for(int i=0;i<N;i++){int tat=f[i]-a[i],wt=tat-b[i];printf("%-7s %4d %3d\n",n[i],tat,wt);z+=tat;w+=wt;}printf("Average TAT = %.2f, average WT = %.2f\n",z/N,w/N);return 0;}
