@@ -1,0 +1,17 @@
+Task 5 – Distributed and Cloud-Based Storage
+
+Suggested design:
+- NFS for simple campus-network file sharing.
+- Ceph or HDFS for distributed storage where scale and replication are needed.
+- Cloud object storage for remote access and backup.
+
+Replication stores copies of data on multiple nodes to improve availability.
+Strong consistency is appropriate for critical student-record updates.
+Eventual consistency may be acceptable for cached or replicated media.
+
+Device-management concepts:
+- Device drivers: interface between OS and hardware.
+- Buffering: temporary storage during data transfer.
+- Caching: keeps frequently used data in faster memory.
+- Spooling: queues jobs for devices such as printers.
+- Block-device interface: transfers fixed-size storage blocks.
